@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/blog-app/node_modules/
+/blog-admin/target/
+/blog-api/target/
+/blog-app/dist/
+/.idea/

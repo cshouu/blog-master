@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - app
+    depends_on:
+      - app
+    volumes:
+      - /mnt/docker/docker-compose/nginx/:/etc/nginx/
+      - /mnt/cshouu/web:/cshouu/web
+      - /mnt/cshouu/blog:/cshouu/blog
+    network_mode: "bridge"
+  app:
+    image: app
+    container_name: app
+    expose:
+      - "8888"
+    network_mode: "bridge"
